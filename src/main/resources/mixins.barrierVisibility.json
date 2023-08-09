@@ -5,5 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "blocks.MixinBlockBarrier"
+  ],
+  "client": [
+    "blocks.MixinBlockStateMapper"
   ]
 }
