@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "refmap": "mixins.visiblebarrier.refmap.json",
+  "package": "me.redth.visiblebarrier.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.7",
+  "mixins": [
+    "MixinBlockBarrier",
+    "MixinBlockStateMapper"
+  ],
+  "client": [
+    "MixinWorldClient"
+  ]
+}
