@@ -16,16 +16,17 @@ public class VisibleBarrier {
 
     @Mod.Instance(MODID)
     public static VisibleBarrier INSTANCE;
+    public static VBConfig config;
 
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
-        new VBConfig();
+        config = new VBConfig();
         CommandManager.register(this);
     }
 
     @Main
     private void command() {
-        VBConfig.enabled = !VBConfig.enabled;
+        config.enabled = !config.enabled;
         reloadChunks();
     }
 

@@ -6,9 +6,6 @@ import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
 
 public class VBConfig extends Config {
-    @Switch(name = "Enabled")
-    public static boolean enabled = true;
-
     @Switch(name = "Hide Barrier Particles")
     public static boolean hideBarrierParticles = true;
 

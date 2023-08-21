@@ -1,6 +1,6 @@
 package me.redth.visiblebarrier.mixin;
 
-import me.redth.visiblebarrier.VBConfig;
+import me.redth.visiblebarrier.VisibleBarrier;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBarrier;
 import net.minecraft.block.material.Material;
@@ -23,7 +23,7 @@ public class MixinBlockBarrier extends Block {
 
     @Inject(method = "getRenderType", at = @At("HEAD"), cancellable = true)
     public void getRenderType(final CallbackInfoReturnable<Integer> cir) {
-        if (VBConfig.enabled)
+        if (VisibleBarrier.config.enabled)
             cir.setReturnValue(3);
     }
 
