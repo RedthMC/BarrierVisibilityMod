@@ -1,7 +1,7 @@
-package me.redth.visiblebarrier.mixin;
+package me.redth.barriervisibility.mixin;
 
-import me.redth.visiblebarrier.VBConfig;
-import me.redth.visiblebarrier.VisibleBarrier;
+import me.redth.barriervisibility.ModConfig;
+import me.redth.barriervisibility.BarrierVisibility;
 import net.minecraft.client.multiplayer.WorldClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinWorldClient {
     @Inject(method = "doVoidFogParticles", at = @At("HEAD"), cancellable = true)
     public void getRenderType(CallbackInfo ci) {
-        if (VisibleBarrier.config.enabled && VBConfig.hideBarrierParticles)
+        if (BarrierVisibility.config.enabled && ModConfig.hideBarrierParticles)
             ci.cancel();
     }
 

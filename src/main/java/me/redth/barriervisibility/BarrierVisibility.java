@@ -1,4 +1,4 @@
-package me.redth.visiblebarrier;
+package me.redth.barriervisibility;
 
 import cc.polyfrost.oneconfig.utils.commands.CommandManager;
 import cc.polyfrost.oneconfig.utils.commands.annotations.Command;
@@ -7,20 +7,20 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-@Mod(modid = VisibleBarrier.MODID, name = VisibleBarrier.NAME, version = VisibleBarrier.VERSION)
+@Mod(modid = BarrierVisibility.MODID, name = BarrierVisibility.NAME, version = BarrierVisibility.VERSION)
 @Command(value = "barrier", description = "Toggle Barrier Visibility")
-public class VisibleBarrier {
+public class BarrierVisibility {
     public static final String MODID = "@ID@";
     public static final String NAME = "@NAME@";
     public static final String VERSION = "@VER@";
 
     @Mod.Instance(MODID)
-    public static VisibleBarrier INSTANCE;
-    public static VBConfig config;
+    public static BarrierVisibility INSTANCE;
+    public static ModConfig config;
 
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
-        config = new VBConfig();
+        config = new ModConfig();
         CommandManager.register(this);
     }
 

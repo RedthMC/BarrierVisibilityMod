@@ -1,4 +1,4 @@
-package me.redth.visiblebarrier.mixin;
+package me.redth.barriervisibility.mixin;
 
 import net.minecraft.client.renderer.block.statemap.BlockStateMapper;
 import net.minecraft.init.Blocks;

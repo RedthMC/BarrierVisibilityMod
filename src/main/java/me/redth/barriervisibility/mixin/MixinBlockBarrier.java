@@ -1,6 +1,6 @@
-package me.redth.visiblebarrier.mixin;
+package me.redth.barriervisibility.mixin;
 
-import me.redth.visiblebarrier.VisibleBarrier;
+import me.redth.barriervisibility.BarrierVisibility;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBarrier;
 import net.minecraft.block.material.Material;
@@ -22,16 +22,18 @@ public class MixinBlockBarrier extends Block {
     }
 
     @Inject(method = "getRenderType", at = @At("HEAD"), cancellable = true)
-    public void getRenderType(final CallbackInfoReturnable<Integer> cir) {
-        if (VisibleBarrier.config.enabled)
+    public void getRenderType(CallbackInfoReturnable<Integer> cir) {
+        if (BarrierVisibility.config.enabled)
             cir.setReturnValue(3);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer() {
         return EnumWorldBlockLayer.CUTOUT;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
         return worldIn.getBlockState(pos).getBlock() != this && super.shouldSideBeRendered(worldIn, pos, side);
