@@ -1,6 +1,6 @@
 {
   "required": true,
-  "refmap": "mixins.visiblebarrier.refmap.json",
+  "refmap": "mixins.barriervisibility.refmap.json",
   "package": "me.redth.barriervisibility.mixin",
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.7",
