@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BlockBarrier.class)
-public class MixinBlockBarrier extends Block {
+public abstract class MixinBlockBarrier extends Block {
     public MixinBlockBarrier(Material blockMaterialIn) {
         super(blockMaterialIn);
     }

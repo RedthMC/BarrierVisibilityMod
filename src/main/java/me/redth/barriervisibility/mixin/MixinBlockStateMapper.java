@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import java.util.Set;
 
 @Mixin(BlockStateMapper.class)
-public class MixinBlockStateMapper {
+public abstract class MixinBlockStateMapper {
     @Redirect(method = "putAllStateModelLocations", at = @At(value = "INVOKE", target = "Ljava/util/Set;contains(Ljava/lang/Object;)Z"))
     public boolean getRenderType(Set instance, Object o) {
         return o != Blocks.barrier && instance.contains(o);

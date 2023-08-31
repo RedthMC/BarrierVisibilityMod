@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldClient.class)
-public class MixinWorldClient {
+public abstract class MixinWorldClient {
     @Inject(method = "doVoidFogParticles", at = @At("HEAD"), cancellable = true)
     public void getRenderType(CallbackInfo ci) {
         if (BarrierVisibility.config.enabled && ModConfig.hideBarrierParticles)
