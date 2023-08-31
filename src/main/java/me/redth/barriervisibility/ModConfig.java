@@ -10,7 +10,7 @@ public class ModConfig extends Config {
     public static boolean hideBarrierParticles = true;
 
     public ModConfig() {
-        super(new Mod(BarrierVisibility.NAME, ModType.UTIL_QOL), BarrierVisibility.MODID + ".json");
+        super(new Mod(BarrierVisibility.NAME, ModType.UTIL_QOL, "/barrier.png"), BarrierVisibility.MODID + ".json");
         initialize();
     }
 
